@@ -1,0 +1,218 @@
+.main {
+  position: relative;
+  z-index: 1;
+  padding: 96px 40px 80px;
+  max-width: 900px;
+}
+
+.section { margin-bottom: 56px; }
+
+.sectionLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--dim);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Hardware card */
+.hardwareCard {
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hwItem {
+  display: flex;
+  gap: 20px;
+  padding: 12px 20px;
+  border-bottom: 0.5px solid var(--border);
+  align-items: baseline;
+}
+
+.hwItem:last-child { border-bottom: none; }
+
+.hwKey {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--dim);
+  min-width: 110px;
+  flex-shrink: 0;
+}
+
+.hwVal {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text);
+}
+
+/* VLAN grid */
+.vlanGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.vlanCard {
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+
+.vlan_green { border-left: 2px solid var(--green); }
+.vlan_cyan  { border-left: 2px solid var(--cyan); }
+.vlan_warn  { border-left: 2px solid var(--warn); }
+.vlan_dim   { border-left: 2px solid var(--dim); }
+
+.vlanId {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--dim);
+  margin-bottom: 4px;
+  letter-spacing: 0.1em;
+}
+
+.vlanName {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.vlanSubnet {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--cyan);
+  margin-bottom: 8px;
+}
+
+.vlanRule {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Service table */
+.serviceTable {
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 1fr;
+  gap: 16px;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.02);
+  border-bottom: 0.5px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 1fr;
+  gap: 16px;
+  padding: 14px 20px;
+  border-bottom: 0.5px solid var(--border);
+  align-items: center;
+  transition: background 0.1s;
+}
+
+.tableRow:last-child { border-bottom: none; }
+.tableRow:hover { background: rgba(255,255,255,0.015); }
+
+.serviceName {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.serviceDesc {
+  font-size: 11px;
+  color: var(--dim);
+}
+
+.servicePort {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--cyan);
+}
+
+.serviceUrl {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  word-break: break-all;
+}
+
+.statusBadge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--green);
+  letter-spacing: 0.05em;
+}
+
+.terminal { max-width: 640px; }
+
+/* Lessons */
+.lessonsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.lessonCard {
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 20px;
+  transition: border-color 0.15s;
+}
+
+.lessonCard:hover { border-color: var(--dim); }
+
+.lessonTitle {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--cyan);
+  margin-bottom: 10px;
+}
+
+.lessonBody {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* Next list */
+.nextList { display: flex; flex-direction: column; gap: 10px; }
+
+.nextItem {
+  display: flex;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  align-items: baseline;
+}
+
+.nextArrow { color: var(--green); flex-shrink: 0; }
+
+@media (max-width: 768px) {
+  .main { padding: 80px 20px 64px; }
+  .tableHeader { display: none; }
+  .tableRow { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
+}

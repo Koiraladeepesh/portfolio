@@ -1,0 +1,92 @@
+/* Blog.module.css */
+.main {
+  position: relative;
+  z-index: 1;
+  padding: 96px 40px 80px;
+  max-width: 800px;
+}
+
+.loading {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--dim);
+  margin-bottom: 24px;
+}
+
+.postList { display: flex; flex-direction: column; gap: 2px; }
+
+.postCard {
+  display: block;
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: 8px;
+  padding: 24px 26px;
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+  margin-bottom: 12px;
+}
+
+.postCard:hover {
+  border-color: var(--dim);
+  background: rgba(255,255,255,0.015);
+}
+
+.postMeta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.postDate, .postRead {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--dim);
+  letter-spacing: 0.05em;
+}
+
+.postTitle {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 10px;
+  transition: color 0.15s;
+}
+
+.postCard:hover .postTitle { color: var(--green); }
+
+.postExcerpt {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 14px;
+  max-width: 580px;
+}
+
+.postTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--dim);
+  letter-spacing: 0.04em;
+}
+
+.postArrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--dim);
+  transition: color 0.15s;
+}
+
+.postCard:hover .postArrow { color: var(--green); }
+
+@media (max-width: 768px) {
+  .main { padding: 80px 20px 64px; }
+}
