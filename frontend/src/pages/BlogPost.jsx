@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import axios from 'axios'
 import styles from './BlogPost.module.css'
 
@@ -91,7 +92,7 @@ export default function BlogPost() {
       </div>
 
       <article className={styles.content}>
-        <ReactMarkdown>{post.content}</ReactMarkdown>
+	<ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
       </article>
     </main>
   )

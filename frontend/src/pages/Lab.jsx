@@ -27,9 +27,9 @@ const termLines = [
   { type: 'out', text: '<span style="color:var(--green)">portfolio-frontend</span>    Up 3 days' },
   { type: 'blank', text: '' },
   { type: 'cmd', text: 'tailscale status' },
-  { type: 'out', text: '<span style="color:var(--green)">100.85.210.46</span>   proxmox-host    online' },
-  { type: 'out', text: '<span style="color:var(--green)">100.124.164.125</span> opnsense-vm     online' },
-  { type: 'out', text: '<span style="color:var(--green)">100.93.27.94</span>    ubuntu-server   online' },
+  { type: 'out', text: '<span style="color:var(--green)">[tailscale-ip]</span>   proxmox-host    online' },
+  { type: 'out', text: '<span style="color:var(--green)">[tailscale-ip]</span>   opnsense-vm     online' },
+  { type: 'out', text: '<span style="color:var(--green)">[tailscale-ip]</span>   ubuntu-server   online' }
 ]
 
 export default function Lab() {
@@ -50,7 +50,7 @@ export default function Lab() {
           </div>
           <div className={styles.hwItem}>
             <span className={styles.hwKey}>hypervisor</span>
-            <span className={styles.hwVal}>Proxmox VE 9.1.4 · 192.168.1.10:8006</span>
+            <span className={styles.hwVal}>Proxmox VE 9.1.4 · management interface on trusted VLAN</span>
           </div>
           <div className={styles.hwItem}>
             <span className={styles.hwKey}>firewall vm</span>
@@ -58,7 +58,7 @@ export default function Lab() {
           </div>
           <div className={styles.hwItem}>
             <span className={styles.hwKey}>server vm</span>
-            <span className={styles.hwVal}>Ubuntu 24.04 LTS (VM 101) · 10.10.30.10 · all Docker services</span>
+            <span className={styles.hwVal}>Ubuntu 24.04 LTS (VM 101) · static IP on servers VLAN · all Docker services</span>
           </div>
           <div className={styles.hwItem}>
             <span className={styles.hwKey}>switch</span>
