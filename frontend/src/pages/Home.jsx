@@ -5,13 +5,14 @@ import styles from './Home.module.css'
 const terminalLines = [
   { type: 'cmd', text: 'cat status.json' },
   { type: 'out', text: 'role:     <span style="color:var(--cyan)">"IT Officer, River Group"</span>' },
-  { type: 'out', text: 'target:   <span style="color:var(--cyan)">"Network / Security Engineer"</span>' },
+  { type: 'out', text: 'course:   <span style="color:var(--green)">"DevOps Bootcamp — Leapfrog Connect"</span>' },
+  { type: 'out', text: 'target:   <span style="color:var(--cyan)">"DevOps / Cloud Infrastructure Engineer"</span>' },
   { type: 'out', text: 'lab:      <span style="color:var(--green)">"online — Proxmox + OPNsense + Docker"</span>' },
-  { type: 'out', text: 'certs:    <span style="color:var(--warn)">"CCNA in progress"</span>' },
+  { type: 'out', text: 'next:     <span style="color:var(--warn)">"AWS SAA → CCNA → CKA"</span>' },
   { type: 'out', text: 'location: <span style="color:var(--cyan)">"Kathmandu, Nepal"</span>' },
   { type: 'blank', text: '' },
   { type: 'cmd', text: 'uptime' },
-  { type: 'out', text: 'building for <span style="color:var(--green)">4 months</span> · never stopped learning' },
+  { type: 'out', text: 'infrastructure running · always learning · ready to build' },
 ]
 
 export default function Home() {
@@ -26,20 +27,22 @@ export default function Home() {
         </h1>
 
         <div className={styles.titleLine}>
-          [ ASPIRING NETWORK &amp; SECURITY ENGINEER ]
+          [ ASPIRING DEVOPS &amp; CLOUD INFRASTRUCTURE ENGINEER ]
         </div>
 
         <p className={styles.story}>
-          My first real job was as a Network Engineer. I left to chase something bigger.
-          A Masters abroad. A startup with my wife. Neither worked out.
+          B.Tech Computer Science. MBA. Network &amp; System Engineer.
+          Co-founder. Now managing IT infrastructure for a group of companies
+          — and completing a DevOps bootcamp at Leapfrog Connect.
           <span className={styles.emphasis}>
-            I regret leaving networking. So I'm clawing my way back — one lab build at a time.
+            I build infrastructure, automate deployments, and manage networks.
+            This site runs on my own hardware. Everything here is real and live.
           </span>
         </p>
 
         <div className={styles.ctas}>
           <Link to="/lab" className={styles.btnPrimary}>./view_lab ↗</Link>
-          <Link to="/about" className={styles.btnSecondary}>./my_story</Link>
+          <Link to="/about" className={styles.btnSecondary}>./about_me</Link>
           <Link to="/experience" className={styles.btnSecondary}>./experience</Link>
         </div>
 

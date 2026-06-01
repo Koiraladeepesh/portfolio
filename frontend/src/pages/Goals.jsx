@@ -3,27 +3,76 @@ import Terminal from '../components/Terminal.jsx'
 import styles from './Goals.module.css'
 
 const roadmap = [
-  { phase: 'Q2 2026', title: 'CCNA certification',         status: 'active',  items: ['Complete Cisco CCNA curriculum', 'Pass 200-301 exam', 'Document lab configs as study material'] },
-  { phase: 'Q3 2026', title: 'AWS Solutions Architect SAA', status: 'planned', items: ['Cloud networking fundamentals', 'VPC, security groups, routing', 'SAA-C03 exam'] },
-  { phase: 'Q4 2026', title: 'Security foundations',        status: 'planned', items: ['CompTIA Security+', 'First HackTheBox / TryHackMe machines', 'Add Suricata IDS to home lab'] },
-  { phase: '2027',    title: 'Advanced security',           status: 'future',  items: ['CEH or eJPT', 'Network penetration testing labs', 'OSCP preparation begins'] },
+  {
+    phase: 'May–Jul 2026',
+    title: 'DevOps Bootcamp — Leapfrog Connect',
+    status: 'active',
+    items: [
+      'Linux, shell scripting, system monitoring',
+      'Jenkins CI/CD pipelines connected to GitHub',
+      'Docker, Docker Compose, Docker Swarm',
+      'Kubernetes — Pods, Deployments, Helm charts',
+      'AWS — EC2, VPC, S3, RDS, IAM, ECS',
+      'Final project: fully automated GitHub → Jenkins → Docker → AWS pipeline',
+    ]
+  },
+  {
+    phase: 'Aug–Sep 2026',
+    title: 'AWS Solutions Architect Associate',
+    status: 'planned',
+    items: [
+      'Deepen AWS knowledge from the bootcamp',
+      'VPC design, subnetting, security groups',
+      'Pass SAA-C03 exam',
+    ]
+  },
+  {
+    phase: 'Oct–Dec 2026',
+    title: 'CCNA 200-301',
+    status: 'planned',
+    items: [
+      'Formalise existing networking knowledge',
+      'Routing, switching, OSPF, BGP fundamentals',
+      'Pass CCNA exam — home lab is the study environment',
+    ]
+  },
+  {
+    phase: '2027',
+    title: 'Certified Kubernetes Administrator (CKA)',
+    status: 'future',
+    items: [
+      'Advanced Kubernetes — StatefulSets, PVCs, RBAC',
+      'Deploy K3s cluster on Proxmox home lab',
+      'Pass CKA exam',
+    ]
+  },
+  {
+    phase: '2027+',
+    title: 'Security Specialisation',
+    status: 'future',
+    items: [
+      'CompTIA Security+ or CEH',
+      'Wazuh SIEM + Suricata IDS on home lab',
+      'HackTheBox and TryHackMe',
+    ]
+  },
 ]
 
 const targetRoles = [
-  { role: 'Network Engineer',           focus: 'Design, build, and maintain network infrastructure. Routing, switching, firewall policy, VLAN design. This is where I started and where I belong.' },
-  { role: 'SOC Analyst (L1/L2)',        focus: 'Security monitoring, incident response, log analysis. The Wazuh SIEM I\'m deploying at home is direct preparation for this.' },
-  { role: 'Cloud Network Engineer',     focus: 'AWS/Azure networking — VPCs, peering, transit gateways, security groups. CCNA + AWS SAA builds directly toward this.' },
-  { role: 'DevSecOps Engineer',         focus: 'Security built into infrastructure pipelines. My Docker + Cloudflare + self-hosting experience is directly relevant here.' },
+  { role: 'DevOps Engineer',               focus: 'CI/CD pipelines, container orchestration, infrastructure automation. The Leapfrog bootcamp combined with my home lab Docker experience builds directly toward this.' },
+  { role: 'Cloud Infrastructure Engineer', focus: 'AWS/Azure networking — VPCs, ECS, RDS, IAM. AWS SAA is next on the roadmap after the bootcamp.' },
+  { role: 'Network Engineer',              focus: 'Design and maintain network infrastructure. My home lab — OPNsense, VLANs, firewall rules — proves I already think like a network engineer. CCNA formalises it.' },
+  { role: 'Site Reliability Engineer',     focus: 'Uptime, automation, monitoring, incident response. Running production self-hosted services 24/7 is direct SRE experience at home scale.' },
 ]
 
 const termLines = [
   { type: 'cmd',   text: 'cat roadmap.json | jq .current' },
-  { type: 'out',   text: '<span style="color:var(--cyan)">phase:</span>  <span style="color:var(--green)">"Q2 2026"</span>' },
-  { type: 'out',   text: '<span style="color:var(--cyan)">goal:</span>   <span style="color:var(--green)">"CCNA 200-301"</span>' },
-  { type: 'out',   text: '<span style="color:var(--cyan)">status:</span> <span style="color:var(--warn)">"in progress"</span>' },
+  { type: 'out',   text: '<span style="color:var(--cyan)">phase:</span>  <span style="color:var(--green)">"May–Jul 2026"</span>' },
+  { type: 'out',   text: '<span style="color:var(--cyan)">course:</span> <span style="color:var(--green)">"DevOps Bootcamp — Leapfrog Connect"</span>' },
+  { type: 'out',   text: '<span style="color:var(--cyan)">next:</span>   <span style="color:var(--warn)">"AWS SAA → CCNA → CKA"</span>' },
   { type: 'blank', text: '' },
   { type: 'cmd',   text: 'echo $TARGET_ROLE' },
-  { type: 'out',   text: '<span style="color:var(--green)">Network Engineer | Security Specialist</span>' },
+  { type: 'out',   text: '<span style="color:var(--green)">DevOps Engineer | Cloud Infrastructure | Network Engineer</span>' },
 ]
 
 export default function Goals() {
@@ -32,11 +81,11 @@ export default function Goals() {
       <PageHeader
         label="// where i'm heading"
         title="The plan_"
-        subtitle="I know exactly what I want. Here's how I'm getting there — and why I'm worth a conversation if you're hiring."
+        subtitle="DevOps bootcamp running. AWS next. CCNA after. Every step builds on the last."
       />
 
       <section className={styles.section}>
-        <div className={styles.sectionLabel}>// certification roadmap</div>
+        <div className={styles.sectionLabel}>// certification & learning roadmap</div>
         <div className={styles.roadmap}>
           {roadmap.map((phase, i) => (
             <div key={i} className={`${styles.phaseCard} ${styles[phase.status]}`}>
@@ -79,27 +128,27 @@ export default function Goals() {
       <section className={styles.hireSection}>
         <div className={styles.sectionLabel}>// if you're hiring</div>
         <div className={styles.hireCard}>
-          <div className={styles.hireTitle}>Here's why I'm worth a conversation</div>
+          <div className={styles.hireTitle}>Why I am worth a conversation</div>
           <div className={styles.hirePoints}>
             <div className={styles.hirePoint}>
               <span className={styles.hireNum}>01</span>
               <div>
-                <div className={styles.hirePointTitle}>I've already done the job</div>
-                <p>1 year as a Network & System Engineer at iDream Technologies. This isn't a career change — it's a return.</p>
+                <div className={styles.hirePointTitle}>Already running production infrastructure</div>
+                <p>Proxmox, OPNsense, VLAN segmentation, Docker Compose, Cloudflare Tunnel, Tailscale — all running 24/7. Not a tutorial. A real self-hosted infrastructure stack.</p>
               </div>
             </div>
             <div className={styles.hirePoint}>
               <span className={styles.hireNum}>02</span>
               <div>
-                <div className={styles.hirePointTitle}>The lab proves I mean it</div>
-                <p>Proxmox, OPNsense, VLAN segmentation, Docker, Cloudflare Tunnel — all running 24/7. Not a tutorial. A real infrastructure.</p>
+                <div className={styles.hirePointTitle}>Network foundation + DevOps trajectory</div>
+                <p>1 year as a Network & System Engineer. Now containerising, automating, and deploying full-stack applications on my own hardware. DevOps bootcamp running. AWS SAA and CCNA next.</p>
               </div>
             </div>
             <div className={styles.hirePoint}>
               <span className={styles.hireNum}>03</span>
               <div>
-                <div className={styles.hirePointTitle}>I know what I want</div>
-                <p>Networking and security. Not a stepping stone to something else. The plan has been clear since December 2025.</p>
+                <div className={styles.hirePointTitle}>Business thinking built in</div>
+                <p>MBA and co-founder experience means I understand infrastructure decisions beyond the technical layer — cost, risk, reliability, and what actually matters to the business.</p>
               </div>
             </div>
           </div>

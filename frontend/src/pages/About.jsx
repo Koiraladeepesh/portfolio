@@ -5,58 +5,44 @@ const timeline = [
   {
     period: '2020',
     title: 'B.Tech Computer Science & Engineering',
-    sub: 'Graduated · 4-year CS foundation',
-    note: 'The technical base everything else builds on.',
+    sub: 'Graduated · 4-year CS & Engineering foundation',
+    note: 'Strong technical foundation in networking, systems, and software engineering.',
     color: 'green',
   },
   {
     period: 'Jan–Dec 2022',
     title: 'Network & System Engineer — iDream Technologies',
     sub: 'Thapathali, Kathmandu · while completing Masters simultaneously',
-    note: 'My first real engineering role. Hands-on routing, switching, systems. I was good at it. I left. I regret it.',
+    note: 'Hands-on network and system engineering — firewalls, routing, Windows Server, VMware, Hyper-V. Worked full-time while studying for my Masters.',
     color: 'cyan',
     highlight: true,
   },
   {
     period: 'Oct 2021–Oct 2023',
     title: 'Masters in Business Management',
-    sub: 'Coursework completed · ran alongside the engineering job',
-    note: 'Studied and worked full-time simultaneously. Learned the business side of technology.',
+    sub: 'Coursework completed · ran alongside engineering career',
+    note: 'Studied and worked simultaneously. Understanding the business side of technology makes me a stronger engineer.',
     color: 'purple',
   },
   {
     period: 'Oct 2023–Dec 2024',
-    title: 'Freelance IT + MBA Thesis',
+    title: 'Freelance IT Consultant + MBA Thesis',
     sub: 'Independent consulting · research · self-directed',
-    note: 'Completed postgrad research while taking freelance engagements. Not idle — just building differently.',
+    note: 'Delivered IT consulting engagements while completing postgraduate research. Built the foundations of my home lab during this period.',
     color: 'dim',
   },
   {
     period: 'Dec 2024–Dec 2025',
-    title: 'Co-founder — Rojgar Sutra',
-    sub: 'HR company · with my wife · ran for 1 year',
-    note: 'Built a real business from scratch. Managed operations, hiring, client relationships. It didn\'t scale. We closed it. I learned more that year than any classroom taught me.',
+    title: 'Co-founder & Director — Rojgar Sutra Pvt. Ltd.',
+    sub: 'HR & Recruitment company · with my wife · 1 year',
+    note: 'Built a company from scratch. Managed operations, technical infrastructure, client relationships, and business development. A masterclass in execution under pressure.',
     color: 'warn',
   },
   {
-    period: 'Mar–Dec 2025',
-    title: 'Australia Masters Application + Thesis Completion',
-    sub: 'ICT Research application · MBA thesis submitted mid-2025',
-    note: 'Applied for a research Masters while running a startup and finishing a thesis. Strong profile. Still rejected.',
-    color: 'dim',
-  },
-  {
-    period: 'Dec 2025',
-    title: 'Visa rejected. Startup closed. Same month.',
-    sub: 'Two things failing at once.',
-    note: 'This was the lowest point. And the most clarifying. I knew exactly what I wanted to do next.',
-    color: 'error',
-  },
-  {
     period: 'Jan 2026 →',
-    title: 'IT Officer — River Group',
-    sub: 'Multi-company IT ownership · building home lab at night',
-    note: 'The day job keeps me moving. The lab keeps me sharp. CCNA next. Then security. The plan is clear.',
+    title: 'IT Officer — River Group · DevOps Bootcamp',
+    sub: 'Multi-company IT ownership · Leapfrog Connect DevOps course · home lab running',
+    note: 'Managing end-to-end IT infrastructure across multiple companies while completing a DevOps bootcamp at Leapfrog Connect — Linux, Jenkins, Docker, Kubernetes, AWS. Production home lab running 24/7.',
     color: 'green',
     current: true,
   },
@@ -66,15 +52,16 @@ export default function About() {
   return (
     <main className={styles.main}>
       <PageHeader
-        label="// my story"
-        title="The long way back_"
-        subtitle="I took a detour. A startup. A visa rejection. A year I didn't plan for. But the destination never changed."
+        label="// about me"
+        title="Builder. Engineer. Operator._"
+        subtitle="I build infrastructure, automate systems, and manage networks. Here is the full picture."
       />
 
       <div className={styles.pullquote}>
-        "My first real job was as a Network Engineer. I left to chase something bigger.
-        A Masters abroad. A startup with my wife. Neither worked out.
-        I regret leaving networking. So I'm clawing my way back — one lab build at a time."
+        "B.Tech in Computer Science. MBA. Network Engineer. Co-founder. Currently doing a DevOps
+        bootcamp at Leapfrog Connect while running a production home lab. Every chapter built
+        something real — technical depth, business thinking, operational experience.
+        Now bringing it all together."
       </div>
 
       <section className={styles.timelineSection}>
@@ -98,22 +85,22 @@ export default function About() {
       </section>
 
       <section className={styles.whySection}>
-        <div className={styles.sectionLabel}>// why networking & security</div>
+        <div className={styles.sectionLabel}>// why devops & cloud</div>
         <div className={styles.whyGrid}>
           <div className={styles.whyCard}>
             <div className={styles.whyNum}>01</div>
-            <div className={styles.whyTitle}>It's where I came alive</div>
-            <p className={styles.whyText}>At iDream, I was the most engaged I'd ever been professionally. Diagnosing network issues, building infrastructure, owning systems — it didn't feel like work. Leaving was the mistake I think about most.</p>
+            <div className={styles.whyTitle}>Already running production infrastructure</div>
+            <p className={styles.whyText}>My home lab runs Proxmox, OPNsense with VLAN segmentation, Docker Compose services, Cloudflare Tunnel, and Tailscale mesh VPN — 24/7. This site is self-hosted on my own hardware. That is DevOps at home scale.</p>
           </div>
           <div className={styles.whyCard}>
             <div className={styles.whyNum}>02</div>
-            <div className={styles.whyTitle}>I never stopped building</div>
-            <p className={styles.whyText}>While working as IT Officer, I built a Proxmox cluster at home. Set up OPNsense with proper VLAN segmentation. Self-hosted 4 services behind a Cloudflare tunnel. The lab runs 24/7. That's not a hobby — that's who I am.</p>
+            <div className={styles.whyTitle}>Structured learning on top of real experience</div>
+            <p className={styles.whyText}>The Leapfrog Connect DevOps bootcamp is formalising what I already do — Jenkins CI/CD, Kubernetes, AWS. I am not learning Docker for the first time. I am learning to orchestrate it at scale.</p>
           </div>
           <div className={styles.whyCard}>
             <div className={styles.whyNum}>03</div>
-            <div className={styles.whyTitle}>Security is the next logical step</div>
-            <p className={styles.whyText}>You can't build a properly segmented network without thinking like an attacker. Every firewall rule I write, every VLAN I isolate — that's security thinking. I want to go deeper. CTFs, CCNA, then security certifications.</p>
+            <div className={styles.whyTitle}>Business thinking built in</div>
+            <p className={styles.whyText}>MBA and one year co-founding a company means I understand infrastructure decisions beyond the technical layer. Cost, reliability, scalability — I think about all three when I build systems.</p>
           </div>
         </div>
       </section>

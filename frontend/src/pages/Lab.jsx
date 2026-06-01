@@ -7,7 +7,7 @@ const services = [
   { name: 'Nginx Proxy Manager', port: '81', url: 'NPM (internal)',                  status: 'online', desc: 'Reverse proxy for all services'        },
   { name: 'Nextcloud',         port: '8080', url: 'nextcloud.deepeshkoirala.com.np', status: 'online', desc: 'Self-hosted cloud storage'             },
   { name: 'Jellyfin',          port: '8096', url: 'jellyfin.deepeshkoirala.com.np',  status: 'online', desc: 'Media server — movies, TV, music'      },
-  { name: 'Portfolio',         port: '8090', url: 'deepeshkoirala.com.np',           status: 'online', desc: 'This site — React + Node + Postgres'   },
+  { name: 'Portfolio',         port: '8091', url: 'deepeshkoirala.com.np',           status: 'online', desc: 'This site — React + Node + Postgres'   },
 ]
 
 const vlans = [
